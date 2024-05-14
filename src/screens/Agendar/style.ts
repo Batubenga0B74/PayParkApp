@@ -4,7 +4,7 @@ import styled from "styled-components/native";
     width: 343px;
     height: 77px;
     flex-direction: row;
-    top: 40px;
+    top: 25px;
     left: 27px;
     align-items: center;
     padding: 10px  16px;
@@ -27,14 +27,14 @@ import styled from "styled-components/native";
     padding: 10px 16px;
     height: 80px;
     flex-direction: row;
-    top: 30px;
+    top: 25px;
     align-items: center;
     justify-content:space-between;
  `
 export const Calende = styled.View`
-top: 70px;
+top: 50px;
  width: 343px;
- height:  300px;
+ height:  350px;
  left: 25px;
  padding: 20px;
  border:  1px solid #DADADA;

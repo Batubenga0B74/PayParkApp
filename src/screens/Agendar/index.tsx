@@ -4,12 +4,14 @@ import { Switch } from 'react-native-switch';
 import * as Seven from './style'
 import { AntDesign} from '@expo/vector-icons'
 import { StatusBar } from 'expo-status-bar';
-import { Calendar } from 'react-native-calendario';
+import { Calendar, LocaleConfig } from 'react-native-calendars';
+
 // import { Container } from './styles';
 
 export function Agendar(){
     const [isEnabled, setIsEnabled] = useState(false);
     const toggleSwitch = () => setIsEnabled(previousState => !previousState);
+    const [selected, setSelected] = useState('');
   return (
      <View style = { styles.containe}>
             <StatusBar style='light' translucent={false} backgroundColor='#000' />
@@ -43,12 +45,29 @@ export function Agendar(){
       </Seven.Header>
         
        <Seven.Calende>
-          <Calendar 
-              minDate={new Date(2024, 2, 14)}
-              startDate={new Date(2024, 3, 31)}
-              endDate={new Date(2024, 4, 5)}
-            
-          />
+         <Calendar
+        theme={{
+          backgroundColor: '#ffffff',
+          calendarBackground: '#ffffff',
+          textSectionTitleColor: '#b6c1cd',
+          selectedDayBackgroundColor: '#00adf5',
+          selectedDayTextColor: '#ffffff',
+          todayTextColor: '#00adf5',
+          dayTextColor: '#2d4150',
+           textDisabledColor: '#d9e'
+          
+        }}
+        onDayPress={day => {
+          setSelected(day.dateString);
+        }}
+        markedDates={{
+          [selected]: {selected: true, disableTouchEvent: true, }
+        }}
+
+
+
+
+         />
        </Seven.Calende>
      </View>
   )
