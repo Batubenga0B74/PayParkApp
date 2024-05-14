@@ -3,11 +3,11 @@ import { useRef,useCallback,useMemo } from "react";
 import React from "react";
 import * as CT from "./style"
 import { StatusBar } from "expo-status-bar";
-import {OnboardFlow} from 'react-native-onboard';
+
 import { StyleSheet, View, Text, TouchableOpacity,Image } from "react-native";
 import { AntDesign,FontAwesome,Fontisto ,FontAwesome5 ,Entypo} from "@expo/vector-icons"
 import Estacionamento from "../../components/Estacionamento";
-import BottomSheet from "@gorhom/bottom-sheet";
+
 
 export default function(){
     const bottomSheetref = useRef(null);

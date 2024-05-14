@@ -1,0 +1,42 @@
+import styled from "styled-components/native";
+
+ export const Header = styled.View `
+    width: 343px;
+    height: 77px;
+    flex-direction: row;
+    top: 40px;
+    left: 27px;
+    align-items: center;
+    padding: 10px  16px;
+    justify-content: space-between;
+    border-radius: 12px;
+    border:  1px solid #DADADA;
+    
+
+ `
+ export const Textos = styled.View`
+    width: 227px;
+    height: 30px;
+    font-size: 9px;
+    top: -7px;
+    gap: 4;
+ 
+ `
+ export const  Date = styled.View `
+    width: 80%;
+    padding: 10px 16px;
+    height: 80px;
+    flex-direction: row;
+    top: 30px;
+    align-items: center;
+    justify-content:space-between;
+ `
+export const Calende = styled.View`
+top: 70px;
+ width: 343px;
+ height:  300px;
+ left: 25px;
+ padding: 20px;
+ border:  1px solid #DADADA;
+ border-radius: 12px;
+`
