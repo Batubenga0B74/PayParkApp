@@ -64,9 +64,6 @@ export function Agendar(){
           [selected]: {selected: true, disableTouchEvent: true, }
         }}
 
-
-
-
          />
        </Seven.Calende>
      </View>
