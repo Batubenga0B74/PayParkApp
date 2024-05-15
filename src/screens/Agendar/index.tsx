@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View , Text,StyleSheet } from 'react-native';
+import { View , Text,StyleSheet, TextInput,Button } from 'react-native';
 import { Switch } from 'react-native-switch';
 import * as Seven from './style'
 import { AntDesign} from '@expo/vector-icons'
@@ -12,13 +12,24 @@ export function Agendar(){
     const [isEnabled, setIsEnabled] = useState(false);
     const toggleSwitch = () => setIsEnabled(previousState => !previousState);
     const [selected, setSelected] = useState('');
+
+    const [hour, setHour] = useState('');
+    const [minute, setMinute] = useState('');
+
+    const handleSetTime = () => {
+      // Aqui você pode usar a hora e o minuto inseridos pelo usuário
+      console.log('Hora:', hour);
+      console.log('Minuto:', minute);
+    };
+    
+
   return (
      <View style = { styles.containe}>
             <StatusBar style='light' translucent={false} backgroundColor='#000' />
-        <Seven.Date>
+        <Seven.Daten>
             <AntDesign name='left' size={20}/>
            <Text style = {{fontWeight:'bold' , right:50}}>Data e Hora </Text>
-        </Seven.Date>
+        </Seven.Daten>
       <Seven.Header>
           <Seven.Textos>
               <Text style = { styles.text}>Receber notificação antecipadamente</Text>
@@ -43,7 +54,7 @@ export function Agendar(){
 
             />
       </Seven.Header>
-        
+
        <Seven.Calende>
          <Calendar
         theme={{
@@ -63,9 +74,31 @@ export function Agendar(){
         markedDates={{
           [selected]: {selected: true, disableTouchEvent: true, }
         }}
-
          />
        </Seven.Calende>
+
+       <Seven.timer>
+         
+         <TextInput
+        placeholder="Hora"
+        keyboardType="numeric"
+        maxLength={2}
+        onChangeText={(text) => setHour(text)}
+        value={hour}
+        style={{ borderWidth: 1, borderColor: 'gray', padding: 10, marginBottom: 10,borderRadius:10 }}
+      />
+      <TextInput
+        placeholder="Minuto"
+        keyboardType="numeric"
+        maxLength={2}
+        onChangeText={(text) => setMinute(text)}
+        value={minute}
+        style={{ borderWidth: 1, borderColor: 'gray', padding: 10, marginBottom: 10,borderRadius:10 }}
+      />
+     
+
+         
+       </Seven.timer>
      </View>
   )
   
@@ -90,4 +123,7 @@ const styles = StyleSheet.create({
       fontWeight:'bold',
       
     },
+    input:{
+       borderRadius:10,
+    }
   });

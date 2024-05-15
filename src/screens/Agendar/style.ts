@@ -22,7 +22,7 @@ import styled from "styled-components/native";
     gap: 4;
  
  `
- export const  Date = styled.View `
+ export const  Daten = styled.View `
     width: 80%;
     padding: 10px 16px;
     height: 80px;
@@ -39,4 +39,14 @@ top: 50px;
  padding: 20px;
  border:  1px solid #DADADA;
  border-radius: 12px;
+`
+export const timer  = styled.View`
+   width: 343px;
+   height: 60px;
+   
+   left: 25px;
+   top: 60px;
+   gap: 10;
+   align-items: center;
+   flex-direction: row;
 `
