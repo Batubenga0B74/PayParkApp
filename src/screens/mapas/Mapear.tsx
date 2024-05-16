@@ -54,7 +54,6 @@ const Iconepth = require('./image/carro.png');
                 styles={{listView:{height:100}}}
                 
                 />
-
             </SafeAreaView>
             {
                 Location &&
@@ -67,7 +66,6 @@ const Iconepth = require('./image/carro.png');
                  longitudeDelta:0.005,
                  latitudeDelta:0.005
                }}
-               
                >
                 <Marker
                     coordinate={{
@@ -76,12 +74,10 @@ const Iconepth = require('./image/carro.png');
                     }}
                 />
                 </MapView>
-            }
-            
+            } 
         </View>
     )
 }
-
 const estilos = StyleSheet.create({
     map:{
         flex:1,

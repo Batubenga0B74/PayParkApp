@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
-import { View , Text,StyleSheet, TextInput,Button } from 'react-native';
+import { View , Text,StyleSheet, TextInput,Button, ScrollView } from 'react-native';
 import { Switch } from 'react-native-switch';
 import * as Seven from './style'
 import { AntDesign} from '@expo/vector-icons'
 import { StatusBar } from 'expo-status-bar';
 import { Calendar, LocaleConfig } from 'react-native-calendars';
-
-// import { Container } from './styles';
-
+import { Botao } from '../../components/Botao';
 export function Agendar(){
     const [isEnabled, setIsEnabled] = useState(false);
     const toggleSwitch = () => setIsEnabled(previousState => !previousState);
@@ -17,14 +15,13 @@ export function Agendar(){
     const [minute, setMinute] = useState('');
 
     const handleSetTime = () => {
-      // Aqui você pode usar a hora e o minuto inseridos pelo usuário
+      
       console.log('Hora:', hour);
       console.log('Minuto:', minute);
     };
     
-
   return (
-     <View style = { styles.containe}>
+     < ScrollView style = { styles.containe}>
             <StatusBar style='light' translucent={false} backgroundColor='#000' />
         <Seven.Daten>
             <AntDesign name='left' size={20}/>
@@ -38,7 +35,6 @@ export function Agendar(){
             antes de perder a sua vaga e ter de fazer tudo novamente
             </Text>
           </Seven.Textos>
-
               <Switch
               thumbColor={isEnabled ? '#f5dd4b' : '#f4f3f4'}
               ios_backgroundColor="#3e3e3e"
@@ -50,8 +46,6 @@ export function Agendar(){
               barStyle={{ width: 100, height: 100 }}
               thumbStyle={{ width: 80, height: 80}} 
               accessibilityLabel=""
-
-
             />
       </Seven.Header>
 
@@ -78,14 +72,13 @@ export function Agendar(){
        </Seven.Calende>
 
        <Seven.timer>
-         
          <TextInput
         placeholder="Hora"
         keyboardType="numeric"
         maxLength={2}
         onChangeText={(text) => setHour(text)}
         value={hour}
-        style={{ borderWidth: 1, borderColor: 'gray', padding: 10, marginBottom: 10,borderRadius:10 }}
+        style={{ borderWidth: 0, borderColor: 'gray', padding: 10, marginBottom: 10,borderRadius:10,  borderBottomWidth:1, }}
       />
       <TextInput
         placeholder="Minuto"
@@ -93,18 +86,13 @@ export function Agendar(){
         maxLength={2}
         onChangeText={(text) => setMinute(text)}
         value={minute}
-        style={{ borderWidth: 1, borderColor: 'gray', padding: 10, marginBottom: 10,borderRadius:10 }}
-      />
-     
-
-         
+        style={{ borderWidth: 0, borderColor: 'gray', padding: 10, marginBottom: 10,borderRadius:10,  borderBottomWidth:1, }}
+      /> 
        </Seven.timer>
-     </View>
-  )
-  
+       <Botao Tema = 'Reservar'/>
+     </ ScrollView>
+  ) 
 }
-
-
 const styles = StyleSheet.create({
     containe: {
       flex: 1,
@@ -125,5 +113,7 @@ const styles = StyleSheet.create({
     },
     input:{
        borderRadius:10,
+       borderWidth:0,
+       borderBottomWidth:1,
     }
   });
